@@ -1,0 +1,36 @@
+
+header {width: 100%; padding-bottom: 16px}
+header > * {text-align: center;} 
+header img {position: absolute;}
+header .left {position:fixed; top:8px; left: 8px }
+header .center {position:fixed; top:8px; left: 50% }
+header .right {position:fixed; top:8px; right: 8px }
+body {font-size: 12pt; font-family: Arial, Helvetica, sans-serif;}
+section {margin-bottom: 16px;width: 1128px;}
+article {}
+footer {}
+table {border-collapse: collapse; width: 100%; font-size: 11pt; font-family: Arial, Helvetica, sans-serif;}
+table tr td, table tr th {border: 1px solid #ddd;}
+table .borderless, .borderless td, .borderless th {border: none;}
+thead: {}
+thead tr td {font-weight: 600;}
+tr.underline td {border-bottom: 1px solid;}
+td.underline {border-bottom: 1px solid;}
+td.underline.amount {border-bottom: 1px solid;text-align: right;}
+th,td {text-align: left; padding:4px;  vertical-align: top;}
+label {clear: both; margin-right: 4px;}
+input { float: right; border: none; border-bottom: 1px solid; font-size: 15px;}
+.report {position: relative;font-family: arial, sans-serif, font-size: 10pt;}
+.portrait {width: 840px}
+.landscape {width: 1200px}
+.borderless tr {background-color: transparent;}
+.amount {width: 90px; text-align: right;}
+.group {font-size: 18px; font-weight: 500;}
+.title {text-align:center;}
+.date {width: 100px;}
+.empty {height: 24px;}
+.indent {padding-left: 16px;}
+.rowbox {display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;display:-webkit-box; }
+.flexrow {display:-webkit-box;display:-webkit-flex;display:flex; align-items: flex-start;}
+.flexheadrow {display:-webkit-box; display:-webkit-flex; -webkit-box-pack:end; display:flex; justify-content:end; align-items: flex-end; margin-bottom: 24px;}
+@media screen {.new-page { margin: 10px 0 0 0; padding: 10px 0; border-top: 1px dashed #c5c5c5;	}}

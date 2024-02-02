@@ -1,0 +1,276 @@
+<style>
+    header {width: 100%; padding-bottom: 16px}
+    header > * {text-align: center;} 
+    header img {position: absolute;}
+    header .left {position:fixed; top:8px; left: 8px }
+    header .center {position:fixed; top:8px; left: 50% }
+    header .right {position:fixed; top:8px; right: 8px }
+    body {font-size: 12pt; font-family: Arial, Helvetica, sans-serif;}
+    section {margin-bottom: 8px; width: 100%}
+    table {border-collapse: collapse; width: 100%; font-size: 11pt; font-family: Arial, Helvetica, sans-serif;}
+    table tr td, table tr th {border: 1px solid #ddd;}
+    table .borderless, .borderless td, .borderless th {border: none;}
+    thead tr td {font-weight: 600;}
+    tr.underline td {border-bottom: 1px solid;}
+    tr.bg th {background-color: lightgrey; border-top: solid 1px}
+    td.underline {border-bottom: 1px solid;}
+    td.underline.amount {border-bottom: 1px solid;text-align: right;}
+    th.topline.amount, td.topline.amount {border-top: 2px solid;text-align: right;}
+    th,td {text-align: left; padding:4px;  vertical-align: top;}
+    th.right,td.right {text-align: right;}
+    label {clear: both; margin-right: 4px;}
+    input { float: right; border: none; border-bottom: 1px solid; font-size: 15px;}
+    .report {position: relative;font-family: arial, sans-serif;}
+    .portrait {width: 840px}
+    .landscape {width: 1200px}
+    .borderless tr {background-color: transparent;}
+    .amount {width: 90px; text-align: right;}
+    .group {font-size: 18px; font-weight: 500;}
+    .title, .center {text-align:center;}
+    .date {width: 100px;}
+    .empty {height: 24px;}
+    .indent {padding-left: 16px;}
+    .rowbox {display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;display:-webkit-box; }
+    .flexrow {display:-webkit-box;display:-webkit-flex;display:flex; align-items: flex-start;}
+    .flexheadrow {display:-webkit-box; display:-webkit-flex; -webkit-box-pack:end; display:flex; justify-content:end; align-items: flex-end; margin-bottom: 24px;}
+  </style>
+  <div id="report-id" class="report portrait">
+    <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
+    <div style="clear: both;"></div>
+    <section>
+      <h2 class="title">{{organizationName}}</h2>
+      <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div>
+    </section>
+    <hr />
+  
+    <h3 class="center">TAX INVOICE</h3>
+
+      <div style="float: left">
+        <div>{{customerName}}</div>
+        <p>{{customerAddressLabel}}</p>
+      </div>
+      <table class="borderless" style="float:right; width:300px">
+        <tbody>
+          <tr><th class="right">Issue Date: </th><td>{{issueDate}}</td></tr>
+          <tr><th class="right">Matter number: </th><td>{{fileCode}}</td></tr>
+          <tr><th class="right">Invoie nunber: </th><td>{{invoiceNumber}}</td></tr>
+        </tbody>
+      </table>
+      
+      <div style="clear: both"></div>
+  
+    <p style="padding-left: 16px;"><strong>RE: </strong>{{fileMatter}}</p>
+    <hr />
+    
+    <div style="display: {{displayTs}}">
+    <h5>Times</h5>
+    <div class="flexrow">        
+      <table class="borderless">
+        <thead>
+          <tr class="bg" data-label>
+            <th class="date">Date</th>
+            <th style="width: 60px">Lwyr.</th>
+            <th>Services</th>
+            <th class="amount">Duration Hr</th>
+            <th class="amount">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-ts-line>
+            <td>{{issueDate}}</td>
+            <td>{{employeeInitial}}</td>
+            <td>{{itemDescription}}</td>
+            <td class="amount">{{quantity}}</td>
+            <td class="amount">{{grossAmount}}</td>
+          </tr>
+          <tr style="height: 20px;" data-line-total>
+            <th></th>
+            <th></th>
+            <th>Our fee</th>
+            <th class="topline amount">{{totalQuantity}}</th>
+            <th class="topline amount">{{totalTsAmount}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+    <div style="display: {{displayDis}}">
+    <h5>Disbursements</h5>
+    <div class="flexrow">        
+      <table class="borderless">
+        <thead>
+          <tr class="bg" data-label>
+            <th class="date">Date</th>
+            <th style="width: 60px">Lwyr.</th>
+            <th>Services</th>
+            <th class="amount">Duration</th>
+            <th class="amount">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-dis-line>
+            <td>{{transactionDate}}</td>
+            <td>{{employeeInitial}}</td>
+            <td>{{itemDescription}}</td>
+            <td class="amount">{{quantity}}</td>
+            <td class="amount">{{grossAmount}}</td>
+          </tr>
+          <tr style="height: 20px;" data-line-total>
+            <th></th>
+            <th></th>
+            <th>Our fee</th>
+            <th class="topline amount">{{totalQuantity}}</th>
+            <th class="topline amount">{{totalDisAmount}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+          
+    <div style="display: {{displayOth}}">
+    <h5>Others</h5>
+    <div class="flexrow">        
+      <table class="borderless">
+        <thead>
+          <tr class="bg" data-label>
+            <th class="date">Date</th>
+            <th style="width: 60px">Lwyr.</th>
+            <th>Services</th>
+            <th class="amount">Duration</th>
+            <th class="amount">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-oth-line>
+            <td>{{issueDate}}</td>
+            <td>{{employeeInitial}}</td>
+            <td>{{itemDescription}}</td>
+            <td class="amount">{{quantity}}</td>
+            <td class="amount">{{grossAmount}}</td>
+          </tr>
+          <tr style="height: 20px;" data-line-total>
+            <th></th>
+            <th></th>
+            <th>Our fee</th>
+            <th class="topline amount">{{totalQuantity}}</th>
+            <th class="topline amount">{{totalOthAmount}}</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+                
+    <div style="padding: 32px;">
+    <p><strong>Time Summary</strong></p>
+    <div class="flexrow">
+      <table class="borderless">
+        <thead>
+          <tr class="bg" data-time>
+            <th style="width: 60px">Lwyr.</th>
+            <th>Name</th>
+            <th class="amount">Rate</th>
+            <th class="amount">Hours</th>
+            <th class="amount">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-time>
+            <td>{{employeeInitial}}</td>
+            <td>{{employeeName}}</td>
+            <td class="amount">{{price}}</td>
+            <td class="amount">{{quantity}}</td>
+            <td class="amount">{{grossAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
+    <div style="float:right;">
+      <table class="borderless" style="width: 400px">
+        <tbody>
+          <tr>
+            <td class="right">Total fees</td>
+            <td class="amount">{{totalNetAmount}}</td>
+          </tr>
+          <tr>
+            <td class="right">Total GST on fees</th>
+            <td class="amount">{{totalTaxAmount}}</td>
+          </tr>
+          <tr>
+            <th class="right">Total New Charges</th>
+            <td class="topline amount">{{totalAmount}}</td>
+          </tr>
+          <tr>
+            <th class="right">Net amount owing on this bill</th>
+            <td class="topline amount">{{totalOweAmount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+   <div style="clear: both"></div>
+    
+    <section>
+      <img src="{{signature}}" alt="Logo" class="left" />
+      <p>{{contactName}}</p>
+    <section>
+
+<!-- page break -->
+<div class="new-page" style="display:block; clear:both; page-break-after:always;"></div>
+
+<div style="border-top: 1px solid lightgrey; margin-top: 30px;">
+  <h4>Payment Details</h4>
+  <div>
+    <p>Payment Methods: <b>{{paymentMethod}}</b></p>
+    <p>Bank Name: <b>{{bankName}}</b></p>
+    <p>Account Number: <b>{{accountNumber}}</b></p>
+    <p>BSB Number: <b>{{bsbNumber}}</b></p>
+    <p>Payment Terms: <b>{{paymentTerms}} Days</b></p>
+  </div>
+  <br />
+</div>
+
+
+  <div class="form-heading">
+    <h3>Form 1</h3>
+    <p>Legal Profession Act 2007 (s 308(5))</p>
+    <p>FORM OF DISCLOSURE OF COSTS TO CLIENTS</p>
+  </div>
+  <div class="centre">
+    <p>Legal costs — your right to know</p>
+  </div>
+  <p>You have the right to:</p>
+  <ul>
+    <li>negotiate a costs agreement with us</li>
+    <li>receive a bill of costs from us</li>
+    <li>request an itemised bill of costs after you receive a lump sum bill from us</li>
+    <li>request written reports about the progress of your matter and the costs incurred in your matter</li>
+    <li>apply for costs to be assessed within 12 months if you are unhappy with our costs</li>
+    <li>apply for the costs agreement to be set aside</li>
+    <li>accept or reject any offer we make for an interstate costs law to apply to your matter</li>
+    <li>notify us that you require an interstate costs law to apply to your matter.</li>
+  </ul>
+  <p>For more information about your rights, please read the fact sheet titled Legal Costs — your right to know. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
+</div>
+
+<div>
+  <div class="form-heading">
+    <h3>Form 2</h3>
+    <p>Legal Profession Act 2007 (s 331(3))</p>
+    <p>FORM OF NOTIFICATION OF CLIENT’S RIGHTS</p>
+  </div>
+  <div class="centre">
+    <p>Your rights in relation to legal costs</p>
+  </div>
+  <p>The following avenues are available to you if you are not happy with this bill:</p>
+  <ul>
+    <li>requesting an itemised bill</li>
+    <li>discussing your concerns with us</li>
+    <li>having our costs assessed</li>
+    <li>applying to set aside our costs agreement</li>
+  </ul>
+  <p>There may be other avenues available in your State or Territory (such as mediation).</p>
+  <p>For more information about your rights, please read the fact sheet titled Your right to challenge legal costs. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
+</div>
