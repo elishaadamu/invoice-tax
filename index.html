@@ -33,33 +33,49 @@
     .rowbox {display: flex; flex-direction: row; justify-content: space-between; align-items: flex-end;display:-webkit-box; }
     .flexrow {display:-webkit-box;display:-webkit-flex;display:flex; align-items: flex-start;}
     .flexheadrow {display:-webkit-box; display:-webkit-flex; -webkit-box-pack:end; display:flex; justify-content:end; align-items: flex-end; margin-bottom: 24px;}
+    .text-center {text-align:center;}
+    .text-bold {text-align:center;font-weight: normal;}
+    .mt {margin-top: 0px; padding-top: 0px;}
+    .danger{color: rgb(190, 6, 6);}
   </style>
   <div id="report-id" class="report portrait">
     <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
+    <table class="borderless" style="float:right; width:300px">
+      <tbody>
+        <tr><th class="right">{{contactName}}</th></tr>
+        <tr><th class="right">{{organizationEmail}}</th></tr>
+        <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
+        <tr><th class="right">{{organizationWebsite}}</th></td></tr>
+      </tbody>
+    </table>
+
     <div style="clear: both;"></div>
     <section>
       <h2 class="title">{{organizationName}}</h2>
       <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div>
     </section>
+    
     <hr />
   
-    <h3 class="center">TAX INVOICE</h3>
+    <h3 class="center danger">TAX INVOICE</h3>
+    <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
+    <p style="padding-left: 16px;" class="danger"><strong>RE: </strong>{{fileMatter}}</p>
 
-      <div style="float: left">
+      <!-- <div style="float: left">
         <div>{{customerName}}</div>
         <p>{{customerAddressLabel}}</p>
-      </div>
-      <table class="borderless" style="float:right; width:300px">
+      </div> -->
+      <!-- <table class="borderless" style="float:right; width:300px">
         <tbody>
           <tr><th class="right">Issue Date: </th><td>{{issueDate}}</td></tr>
           <tr><th class="right">Matter number: </th><td>{{fileCode}}</td></tr>
           <tr><th class="right">Invoie nunber: </th><td>{{invoiceNumber}}</td></tr>
         </tbody>
       </table>
-      
+       -->
       <div style="clear: both"></div>
   
-    <p style="padding-left: 16px;"><strong>RE: </strong>{{fileMatter}}</p>
+  
     <hr />
     
     <div style="display: {{displayTs}}">
