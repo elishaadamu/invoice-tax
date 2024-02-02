@@ -37,6 +37,23 @@
     .text-bold {text-align:center;font-weight: normal;}
     .mt {margin-top: 0px; padding-top: 0px;}
     .danger{color: rgb(190, 6, 6);}
+    .grid-table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  .grid-table th,
+  .grid-table td {
+      padding: 8px;
+      text-align: left;
+  }
+  .grid-table th:first-child,
+  .grid-table td:first-child {
+      width: 100%; /* Make the first column fill all available width */
+  }
+  .grid-table th:nth-child(2),
+  .grid-table td:nth-child(2) {
+      width: 50px; /* Set a fixed width for the "Cost" column */
+  }
     .form-body{
       border: 3px solid rgb(190, 6, 6);
       padding-left: 20px;
@@ -94,8 +111,55 @@
     <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
     <p style="padding-left: 16px;" class="danger"><strong>RE: </strong>{{fileMatter}}</p>
+    <table class="grid-table borderless" style="width: 100%;">
+      <thead>
+          <tr>
+             
+              <th></th>
+              <th>NETT</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Professional Fees - as per the Itemisation following and calculated in accordance with our Costs Agreement</td>
+              <td>$10</td>
+          </tr>         
+          <tr>
+              <td>Professional Fees - Office Costs</td>
+              <td>$1500</td>
+          </tr>     
+          <tr>
+              <td>Disbursements</td>
+              <td>$1500</td>
+          </tr>
+      
+      </tbody>
+  </table>
+  <hr />
+  <table class="grid-table borderless" style="width: 100%;">
+    <thead>
+        <tr>
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="font-weight: bold;">Invoce Total </td>
+            <td>$10</td>
+        </tr>         
 
-      <!-- <div style="float: left">
+        <tr>
+          <td>Less amount to be transferred from Trust </td>
+          <td>$10</td>
+        </tr>    
+    </tbody>
+</table> 
+
+  
+  <hr />
+  <div style="clear: both"></div>
+        <!-- <div style="float: left">
         <div>{{customerName}}</div>
         <p>{{customerAddressLabel}}</p>
       </div> -->
@@ -107,12 +171,8 @@
         </tbody>
       </table>
        -->
-      <div style="clear: both"></div>
-  
-  
-    <hr />
-    
-    <div style="display: {{displayTs}}">
+
+    <!-- <div style="display: {{displayTs}}">
     <h5>Times</h5>
     <div class="flexrow">        
       <table class="borderless">
@@ -143,7 +203,7 @@
         </tbody>
       </table>
     </div>
-    </div>
+    </div> -->
 
     <div style="display: {{displayDis}}">
     <h5>Disbursements</h5>
