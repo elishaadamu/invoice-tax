@@ -37,6 +37,40 @@
     .text-bold {text-align:center;font-weight: normal;}
     .mt {margin-top: 0px; padding-top: 0px;}
     .danger{color: rgb(190, 6, 6);}
+    .form-body{
+      border: 3px solid rgb(190, 6, 6);
+      padding-left: 20px;
+      margin-bottom: 200px;
+    }
+    .form-heading{
+      text-align: center;
+    }
+    .form-heading h3{
+      color: rgb(190, 6, 6);
+      font-size: 30px;
+    }
+    .form-heading p.para-1{
+      font-size: 20px;
+      font-style: italic;
+      margin-bottom: 40px;
+    }
+    .form-heading p.para-2{
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(190, 6, 6);
+    }
+    .centre p{
+      text-align: center;
+      font-style: italic;
+      color: rgb(190, 6, 6);
+      font-size: 20px;
+    }
+    .form-body ul li{
+      list-style-type: square;
+    }
+    .form-body ul li::marker{
+      color: gray;
+    }
   </style>
   <div id="report-id" class="report portrait">
     <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
@@ -248,11 +282,11 @@
   <br />
 </div>
 
-
+<div class="form-body">
   <div class="form-heading">
     <h3>Form 1</h3>
-    <p>Legal Profession Act 2007 (s 308(5))</p>
-    <p>FORM OF DISCLOSURE OF COSTS TO CLIENTS</p>
+    <p class="para-1">Legal Profession Act 2007 (s 308(5))</p>
+    <p class="para-2">FORM OF DISCLOSURE OF COSTS TO CLIENTS</p>
   </div>
   <div class="centre">
     <p>Legal costs — your right to know</p>
@@ -268,14 +302,14 @@
     <li>accept or reject any offer we make for an interstate costs law to apply to your matter</li>
     <li>notify us that you require an interstate costs law to apply to your matter.</li>
   </ul>
-  <p>For more information about your rights, please read the fact sheet titled Legal Costs — your right to know. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
+  <p>For more information about your rights, please read the fact sheet titled <i>Legal Costs — your right to know.</i> You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
 </div>
 
-<div>
+<div class="form-body">
   <div class="form-heading">
     <h3>Form 2</h3>
-    <p>Legal Profession Act 2007 (s 331(3))</p>
-    <p>FORM OF NOTIFICATION OF CLIENT’S RIGHTS</p>
+    <p class="para-1">Legal Profession Act 2007 (s 331(3))</p>
+    <p class="para-2">FORM OF NOTIFICATION OF CLIENT’S RIGHTS</p>
   </div>
   <div class="centre">
     <p>Your rights in relation to legal costs</p>
@@ -290,3 +324,4 @@
   <p>There may be other avenues available in your State or Territory (such as mediation).</p>
   <p>For more information about your rights, please read the fact sheet titled Your right to challenge legal costs. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
 </div>
+
