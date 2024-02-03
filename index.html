@@ -511,29 +511,79 @@
 }
 
 </style>
-  <div class="invoiceItems">
-    <div class="invoiceHeader-1">
-      <img src="{{header}}" alt="Logo" height="100" style=""/>
-      <h2 style="color: rgb(190, 6, 6);">Invoice Itemisation</h2>
-    </div>
-    <div class="invoiceHeader-2">
-      <p class="flex-25">Invoice | {{invoiceNumber}}</p>
-      <p class="flex-25">File | {{fileReference}}</p>
-      <p class="flex-50">File Name | {{fileName}}</p>
-    </div>
-  <table class="grid-table borderless" style="width: 100%;">
-    <thead>
-        <tr style="margin-left: 60px;">Date</tr>
-        <tr>Owner</tr>
-        <tr>Description</tr>
-        <tr>Units</tr>
-        <tr>Amount</tr>
+<div class="invoiceItems">
+  <div class="invoiceHeader-1">
+    <img src="{{header}}" alt="Logo" height="100" style=""/>
+    <h2 style="color: rgb(190, 6, 6);">Invoice Itemisation</h2>
+  </div>
+  <div class="invoiceHeader-2">
+    <p class="flex-25">Invoice | {{invoiceNumber}}</p>
+    <p class="flex-25">File | {{fileReference}}</p>
+    <p class="flex-50">File Name | {{fileName}}</p>
+  </div>
+</div>
+<h4 style="color: rgb(190, 6, 6);">Professional fees</h4>
+<div class="flexrow">       
+  <table class="borderless">
+    <thead style="color: rgb(190, 6, 6);">
+      <tr style="border-bottom: 2px solid grey ;" data-label>
+        <th class="date">Date</th>
+        <th style="width: 60px">Owner</th>
+        <th class="description" colspan="4" >Description</th>
+        <th class="units">Units</th>
+        <th class="amount">Amount</th>
+      </tr>
     </thead>
     <tbody>
-      
+      <tr data-ts-line>
+        <td>{{date}}</td>
+        <td>{{employeeInitial}}</td>
+        <td colspan="4">{{itemDescription}}</td>
+        <td>{{quantity}}</td>
+        <td colspan="4" class="amount">{{clientAmounts}}</td>
+      </tr>
+      <tr style="height: 20px;" data-line-total>
+        <th></th>
+        <th></th>
+        <th colspan="4"></th>
+        <th></th>
+        <th style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
+      </tr>
+      <thead style="color: rgb(190, 6, 6);">
+        <tr class="" data-label>
+          <th class="">Disbursements</th>
+        </tr>
+      </thead>
+      <tr style="border-bottom: 2px solid grey; color: rgb(190, 6, 6);" data-label>
+        <th class="date">Date</th>
+        <th style="width: 60px"></th>
+        <th class="description" colspan="4" >Description</th>
+        <th class="units">Qty</th>
+        <th class="amount">Amount</th>
+      </tr>
+      <tr style="height: 20px;" data-line-total>
+        <th>{{date}}</th>
+        <th></th>
+        <th colspan="4">{{itemDescription}}</th>
+        <th>1</th>
+        <th>$100</th>
+      </tr>
+      <tr style="height: 20px;" data-line-total>
+        <th>{{date}}</th>
+        <th></th>
+        <th colspan="4">{{itemDescription}}</th>
+        <th>0</th>
+        <th>$100</th>
+      </tr>
+      <tr style="height: 20px;" data-line-total>
+        <th></th>
+        <th></th>
+        <th colspan="4"></th>
+        <th></th>
+        <th style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
+      </tr>
     </tbody>
-    
-  </table> 
+  </table>
   </div>
 </div>
 
