@@ -116,7 +116,7 @@
           <tr>
              
               <th></th>
-              <th>NETT</th>
+              <th>NET</th>
           </tr>
       </thead>
       <tbody>
@@ -145,13 +145,13 @@
     </thead>
     <tbody>
         <tr>
-            <td style="font-weight: bold;">Invoce Total </td>
+            <td style="font-weight: bold;">Invoice Total </td>
             <td>$10</td>
         </tr>         
 
         <tr>
           <td>Less amount to be transferred from Trust </td>
-          <td>$10</td>
+          <td>{{netAmount}}</td>
         </tr>    
     </tbody>
 </table> 
@@ -328,6 +328,8 @@
     <section>
 
 <!-- page break -->
+
+
 <div class="new-page" style="display:block; clear:both; page-break-after:always;"></div>
 
 <div style="border-top: 1px solid lightgrey; margin-top: 30px;">
@@ -383,5 +385,56 @@
   </ul>
   <p>There may be other avenues available in your State or Territory (such as mediation).</p>
   <p>For more information about your rights, please read the fact sheet titled Your right to challenge legal costs. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
+</div>
+<style>
+.invoiceHeader-1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.invoiceHeader-2 {
+  display: flex;
+  color: rgb(190, 6, 6);
+  background-color: rgb(218, 218, 218);
+  margin-bottom: 20px;
+}
+
+.flex-25 {
+  flex: 1;
+  width: 25%;
+}
+
+.flex-50 {
+  flex: 2;
+  width: 50%;
+}
+
+</style>
+  <div class="invoiceItems">
+    <div class="invoiceHeader-1">
+      <img src="{{header}}" alt="Logo" height="100" style=""/>
+      <h2 style="color: rgb(190, 6, 6);">Invoice Itemisation</h2>
+    </div>
+    <div class="invoiceHeader-2">
+      <p class="flex-25">Invoice | {{invoiceNumber}}</p>
+      <p class="flex-25">File | {{fileReference}}</p>
+      <p class="flex-50">File Name | {{fileName}}</p>
+    </div>
+  <table class="grid-table borderless" style="width: 100%;">
+    <thead>
+        <tr style="margin-left: 60px;">Date</tr>
+        <tr>Owner</tr>
+        <tr>Description</tr>
+        <tr>Units</tr>
+        <tr>Amount</tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+    
+  </table> 
+  </div>
 </div>
 
