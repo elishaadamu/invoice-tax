@@ -540,14 +540,14 @@
         <td>{{employeeInitial}}</td>
         <td colspan="4">{{itemDescription}}</td>
         <td>{{quantity}}</td>
-        <td colspan="4" class="amount">{{clientAmounts}}</td>
+        <td colspan="4" class="amount">{{amount}}</td>
       </tr>
       <tr style="height: 20px;" data-line-total>
         <th></th>
         <th></th>
         <th colspan="4"></th>
         <th></th>
-        <th style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
+        <th colspan="4" class="amount" style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
       </tr>
       <thead style="color: rgb(190, 6, 6);">
         <tr class="" data-label>
@@ -565,22 +565,15 @@
         <th>{{date}}</th>
         <th></th>
         <th colspan="4">{{itemDescription}}</th>
-        <th>1</th>
-        <th>$100</th>
-      </tr>
-      <tr style="height: 20px;" data-line-total>
-        <th>{{date}}</th>
-        <th></th>
-        <th colspan="4">{{itemDescription}}</th>
-        <th>0</th>
-        <th>$100</th>
+        <th>{{quantity}}</th>
+        <th colspan="4" class="amount">{{amount}}</th>
       </tr>
       <tr style="height: 20px;" data-line-total>
         <th></th>
         <th></th>
         <th colspan="4"></th>
         <th></th>
-        <th style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
+        <th colspan="4" class="amount" style="border-top: 2px solid grey; margin-top: 20px;">{{totalDisAmount}}</th>
       </tr>
     </tbody>
   </table>
