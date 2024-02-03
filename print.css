@@ -12,7 +12,7 @@ footer {}
 table {border-collapse: collapse; width: 100%; font-size: 11pt; font-family: Arial, Helvetica, sans-serif;}
 table tr td, table tr th {border: 1px solid #ddd;}
 table .borderless, .borderless td, .borderless th {border: none;}
-thead: {}
+thead {}
 thead tr td {font-weight: 600;}
 tr.underline td {border-bottom: 1px solid;}
 td.underline {border-bottom: 1px solid;}
@@ -20,7 +20,7 @@ td.underline.amount {border-bottom: 1px solid;text-align: right;}
 th,td {text-align: left; padding:4px;  vertical-align: top;}
 label {clear: both; margin-right: 4px;}
 input { float: right; border: none; border-bottom: 1px solid; font-size: 15px;}
-.report {position: relative;font-family: arial, sans-serif, font-size: 10pt;}
+.report {position: relative;font-family: arial, sans-serif; font-size: 10pt;}
 .portrait {width: 840px}
 .landscape {width: 1200px}
 .borderless tr {background-color: transparent;}
