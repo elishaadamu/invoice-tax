@@ -69,10 +69,8 @@
     <div style="clear: both;"></div>
     <section>
       <h2 class="title">{{organizationName}}</h2>
-      <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div>
+      <!-- <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div> -->
     </section>
-    
-    <hr />
   
     <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
@@ -88,15 +86,15 @@
       <tbody>
           <tr>
               <td>Professional Fees - as per the Itemisation following and calculated in accordance with our Costs Agreement</td>
-              <td>$10</td>
+              <td>{{totalProfAmount}}</td>
           </tr>         
           <tr>
               <td>Professional Fees - Office Costs</td>
-              <td>$1500</td>
+              <td>{{totalProfAmount}}</td>
           </tr>     
           <tr>
               <td>Disbursements</td>
-              <td>$1500</td>
+              <td>{{totalDisAmount}}</td>
           </tr>
       
       </tbody>
@@ -112,18 +110,33 @@
     <tbody>
         <tr>
             <td style="font-weight: bold;">Invoce Total </td>
-            <td>$10</td>
+            <td>{{totalAmount}}</td>
         </tr>         
 
         <tr>
           <td>Less amount to be transferred from Trust </td>
-          <td>$10</td>
+          <td>{{totalOweAmount}}
+            Logo</td>
         </tr>    
     </tbody>
 </table> 
-
   
   <hr />
+  <table class="grid-table borderless" style="width: 100%;">
+    <thead>
+        <tr>
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="font-weight: bold;">Total Invoice </td>
+            <td>{{totalAmount}}</td>
+        </tr>
+    </tbody>
+</table> 
+
   <div style="clear: both"></div>
         <!-- <div style="float: left">
         <div>{{customerName}}</div>
