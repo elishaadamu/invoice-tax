@@ -23,7 +23,8 @@
     .report {position: relative;font-family: arial, sans-serif;}
     .portrait {width: 840px}
     .landscape {width: 1200px}
-    .borderless tr {background-color: transparent;}
+    .borderless tr {background-color: transparent;padding: 0;}
+   
     .amount {width: 90px; text-align: right;}
     .group {font-size: 18px; font-weight: 500;}
     .title, .center {text-align:center;}
@@ -35,6 +36,7 @@
     .flexheadrow {display:-webkit-box; display:-webkit-flex; -webkit-box-pack:end; display:flex; justify-content:end; align-items: flex-end; margin-bottom: 24px;}
     .text-center {text-align:center;}
     .text-bold {text-align:center;font-weight: normal;}
+    .un-bold {font-weight: normal;}
     .mt {margin-top: 0px; padding-top: 0px;}
     .danger{color: rgb(190, 6, 6);}
     .px{padding-left: 4px;}
@@ -187,6 +189,41 @@
 <div class="indent" style="margin-bottom: 5px;">
   <p style="margin-bottom: 5px;">Per | Alan Griffiths</p>
 </div>
+
+<div class="indent"><p>----------------------------------------------------------------------------------------------------------------------------------------------------------</p></div>
+
+<div class="indent center">
+<b class="danger mt">REMITTANCE</b>  <br>
+<b class="danger">Please remit your payment advice to:- alan@aspectbtilaw.com.au</b>  
+</div>
+
+<p class="indent" style="text-decoration: underline; font-weight:700;margin-bottom: 1px;">Direct Deposit</p>
+<!-- <table class="borderless" style="float:left; width:auto">
+  <tbody>
+    <tr><th class="indent un-bold" >Account Name: </th><td>Aspect Business Taxation & Insolvency Law</td></tr>
+    <tr><th class="indent un-bold">BSB: </th><td>{{fileCode}}</td></tr>
+    <tr><th class="indent un-bold">Account Number: </th><td>{{invoiceNumber}}</td></tr>
+  </tbody>
+</table> -->
+
+<table class="borderless" style="float:left; width:auto">
+  <tbody>
+    <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">Aspect Business Taxation & Insolvency Law</td></tr>
+    <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">014 - 734</td></tr>
+    <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">4646 - 10181</td></tr>
+    <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">000737</td></tr>
+  </tbody>
+</table>
+
+<table class="borderless" style="float:right; width:300px">
+  <tbody>
+    <tr><th class="right">Issue Date: </th><td>{{issueDate}}</td></tr>
+    <tr><th class="right">Matter number: </th><td>{{fileCode}}</td></tr>
+    <tr><th class="right">Invoie nunber: </th><td>{{invoiceNumber}}</td></tr>
+  </tbody>
+</table>
+
+
 
 
 
