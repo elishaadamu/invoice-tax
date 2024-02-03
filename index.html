@@ -40,6 +40,7 @@
     .un-bold {font-weight: normal;}
     .mt {margin-top: 0px; padding-top: 0px;}
     .danger{color: rgb(190, 6, 6);}
+    .tertiary{color: lightgrey; }
     .px{padding-left: 4px;}
     .grid-table {
       width: 100%;
@@ -91,6 +92,9 @@
     }
     .form-body ul li::marker{
       color: gray;
+    }
+    .topline-large-bottom{
+      border-bottom: 2px solid grey;
     }
   </style>
   <div id="report-id" class="report portrait">
@@ -514,7 +518,7 @@
 <div class="invoiceItems">
   <div class="invoiceHeader-1">
     <img src="{{header}}" alt="Logo" height="100" style=""/>
-    <h2 style="color: rgb(190, 6, 6);">Invoice Itemisation</h2>
+    <h2 class="danger">Invoice Itemisation</h2>
   </div>
   <div class="invoiceHeader-2">
     <p class="flex-25">Invoice | {{invoiceNumber}}</p>
@@ -522,11 +526,11 @@
     <p class="flex-50">File Name | {{fileName}}</p>
   </div>
 </div>
-<h4 style="color: rgb(190, 6, 6);">Professional fees</h4>
+<h4 class="danger">Professional fees</h4>
 <div class="flexrow">       
   <table class="borderless">
-    <thead style="color: rgb(190, 6, 6);">
-      <tr style="border-bottom: 2px solid grey ;" data-label>
+    <thead class="danger">
+      <tr class="topline-large-bottom" data-label>
         <th class="date">Date</th>
         <th style="width: 60px">Owner</th>
         <th class="description" colspan="4" >Description</th>
@@ -547,14 +551,14 @@
         <th></th>
         <th colspan="4"></th>
         <th></th>
-        <th colspan="4" class="amount" style="border-top: 2px solid grey; margin-top: 20px;">{{totalAmount}}</th>
+        <th colspan="4" class="amount toplineSmall" style="border-top: 2px solid grey;" >{{totalAmount}}</th>
       </tr>
-      <thead style="color: rgb(190, 6, 6);">
+      <thead class="danger">
         <tr class="" data-label>
           <th class="">Disbursements</th>
         </tr>
       </thead>
-      <tr style="border-bottom: 2px solid grey; color: rgb(190, 6, 6);" data-label>
+      <tr class="danger topline-large-bottom"  data-label>
         <th class="date">Date</th>
         <th style="width: 60px"></th>
         <th class="description" colspan="4" >Description</th>
@@ -573,7 +577,7 @@
         <th></th>
         <th colspan="4"></th>
         <th></th>
-        <th colspan="4" class="amount" style="border-top: 2px solid grey; margin-top: 20px;">{{totalDisAmount}}</th>
+        <th colspan="4" class="amount toplineSmall" style="border-top: 2px solid grey;">{{totalDisAmount}}</th>
       </tr>
     </tbody>
   </table>
