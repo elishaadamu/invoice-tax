@@ -23,7 +23,8 @@
     .report {position: relative;font-family: arial, sans-serif;}
     .portrait {width: 840px}
     .landscape {width: 1200px}
-    .borderless tr {background-color: transparent;}
+    .borderless tr {background-color: transparent;padding: 0;}
+   
     .amount {width: 90px; text-align: right;}
     .group {font-size: 18px; font-weight: 500;}
     .title, .center {text-align:center;}
@@ -35,8 +36,11 @@
     .flexheadrow {display:-webkit-box; display:-webkit-flex; -webkit-box-pack:end; display:flex; justify-content:end; align-items: flex-end; margin-bottom: 24px;}
     .text-center {text-align:center;}
     .text-bold {text-align:center;font-weight: normal;}
+    .b-100{font-weight: bold;}
+    .un-bold {font-weight: normal;}
     .mt {margin-top: 0px; padding-top: 0px;}
     .danger{color: rgb(190, 6, 6);}
+    .px{padding-left: 4px;}
     .grid-table {
       width: 100%;
       border-collapse: collapse;
@@ -91,22 +95,27 @@
   </style>
   <div id="report-id" class="report portrait">
     <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
+    <section>
+      <!-- <h2 class="title">{{organizationName}}</h2> -->
+      <!-- <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div> -->
+    </section>
     <table class="borderless" style="float:right; width:300px">
+      <tbody>
+        <tr><th class="indent">File Ref:</th><td>55655</td></tr>
+        <tr><th class="indent">Invoice No:</th><td>55655</td></tr>
+      </tbody>
+    </table>
+    <!-- <table class="borderless" style="float:right; width:300px">
       <tbody>
         <tr><th class="right">{{contactName}}</th></tr>
         <tr><th class="right">{{organizationEmail}}</th></tr>
         <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
         <tr><th class="right">{{organizationWebsite}}</th></td></tr>
       </tbody>
-    </table>
+    </table> -->
 
     <div style="clear: both;"></div>
-    <section>
-      <h2 class="title">{{organizationName}}</h2>
-      <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div>
-    </section>
     
-    <hr />
   
     <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
@@ -122,15 +131,15 @@
       <tbody>
           <tr>
               <td>Professional Fees - as per the Itemisation following and calculated in accordance with our Costs Agreement</td>
-              <td>$10</td>
+              <td>{{totalProfAmount}}</td>
           </tr>         
           <tr>
               <td>Professional Fees - Office Costs</td>
-              <td>$1500</td>
+              <td>{{totalProfAmount}}</td>
           </tr>     
           <tr>
               <td>Disbursements</td>
-              <td>$1500</td>
+              <td>{{totalDisAmount}}</td>
           </tr>
       
       </tbody>
@@ -145,19 +154,109 @@
     </thead>
     <tbody>
         <tr>
+            <td style="font-weight: bold;">Invoce Total </td>
+            <td>{{totalNetAmount}}</td>
             <td style="font-weight: bold;">Invoice Total </td>
             <td>$10</td>
         </tr>         
 
         <tr>
           <td>Less amount to be transferred from Trust </td>
-          <td>{{netAmount}}</td>
+          <td>$10</td>
         </tr>    
     </tbody>
 </table> 
-
   
   <hr />
+  <table class="grid-table borderless" style="width: 100%;">
+    <thead>
+        <tr>
+           
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="font-weight: bold;">Total Due </td>
+            <td>{{totalAmount}}</td>
+        </tr>
+    </tbody>
+</table> 
+ <hr />
+
+ <div>
+   <p class="center"><i>Invoices are payable within seven (7) days</i><br><i>All balances received after the due date will accrue interest in accordance with our Costs Agreement</i></p>
+ </div>
+
+ 
+<div class="indent" style="margin-bottom: 5px;">
+  <p style="margin-bottom: 5px;">With compliments</p>
+  <b class="danger mt" style="margin-bottom: 5px;">Aspect BTI Pty Ltd</b>
+</div>
+
+ 
+<div class="indent" style="margin-bottom: 5px;">
+  <p style="margin-bottom: 5px;">Per | Alan Griffiths</p>
+</div>
+
+<div class="indent"><p>----------------------------------------------------------------------------------------------------------------------------------------------------------</p></div>
+
+<div class="indent center">
+<b class="danger mt">REMITTANCE</b>  <br>
+<b class="danger">Please remit your payment advice to:- alan@aspectbtilaw.com.au</b>  
+</div>
+
+<p class="indent" style="text-decoration: underline; font-weight:700;margin-bottom: 1px;">Direct Deposit</p>
+<!-- <table class="borderless" style="float:left; width:auto">
+  <tbody>
+    <tr><th class="indent un-bold" >Account Name: </th><td>Aspect Business Taxation & Insolvency Law</td></tr>
+    <tr><th class="indent un-bold">BSB: </th><td>{{fileCode}}</td></tr>
+    <tr><th class="indent un-bold">Account Number: </th><td>{{invoiceNumber}}</td></tr>
+  </tbody>
+</table> -->
+
+<!-- First Group of Tables -->
+<div style="overflow: auto;">
+  <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
+    <tbody>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">Aspect Business Taxation & Insolvency Law</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">014 - 734</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">4646 - 10181</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">000737</td></tr>
+    </tbody>
+  </table>
+
+  <table class="borderless" style="float:right; width:auto; margin-left: 20px;">
+    <tbody>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>File Ref:</b><br>230083</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Invoice No:</b><br>000737</th></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Second Group of Tables -->
+<p class="indent" style="text-decoration: underline; font-weight:700;margin-bottom: 1px;">Cheque</p>
+<div style="overflow: auto;">
+  <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
+    <tbody>
+      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;"> ASPECT BTI Pty Ltd <br>PO Box <br> 51 EARLVILLE QLD 4870</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;">000737</td></tr>
+    </tbody>
+  </table>
+
+  <table class="borderless" style="float:right; width:auto; margin-left: 20px;">
+    <tbody>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>Invoice Date</b><br>09 November 2023</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Due Date:</b><br>09 November 2023</th></tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
   <div style="clear: both"></div>
         <!-- <div style="float: left">
         <div>{{customerName}}</div>
@@ -205,7 +304,7 @@
     </div>
     </div> -->
 
-    <div style="display: {{displayDis}}">
+    <!-- <div style="display: {{displayDis}}">
     <h5>Disbursements</h5>
     <div class="flexrow">        
       <table class="borderless">
@@ -325,7 +424,7 @@
     <section>
       <img src="{{signature}}" alt="Logo" class="left" />
       <p>{{contactName}}</p>
-    <section>
+    <section> -->
 
 <!-- page break -->
 
