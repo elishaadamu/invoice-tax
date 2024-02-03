@@ -132,7 +132,7 @@
               <th>NET</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody class="topline-large-bottom">
           <tr>
               <td>Professional Fees - as per the Itemisation following and calculated in accordance with our Costs Agreement</td>
               <td>{{totalProfAmount}}</td>
@@ -148,7 +148,6 @@
       
       </tbody>
   </table>
-  <hr />
   <table class="grid-table borderless" style="width: 100%;">
     <thead>
         <tr>
@@ -156,22 +155,20 @@
            
         </tr>
     </thead>
-    <tbody>
+    <tbody class="topline-large-bottom">
         <tr>
-            <td style="font-weight: bold;">Invoce Total </td>
-            <td>{{totalNetAmount}}</td>
             <td style="font-weight: bold;">Invoice Total </td>
-            <td>$10</td>
+            <td>{{totalNetAmount}}</td>
+
         </tr>         
 
         <tr>
           <td>Less amount to be transferred from Trust </td>
-          <td>$10</td>
+          <td>{{TrustAmount}}</td>
         </tr>    
     </tbody>
 </table> 
   
-  <hr />
   <table class="grid-table borderless" style="width: 100%;">
     <thead>
         <tr>
@@ -186,7 +183,7 @@
         </tr>
     </tbody>
 </table> 
- <hr />
+ <hr  style="border: 2px solid grey;" />
 
  <div>
    <p class="center"><i>Invoices are payable within seven (7) days</i><br><i>All balances received after the due date will accrue interest in accordance with our Costs Agreement</i></p>
@@ -203,14 +200,16 @@
   <p style="margin-bottom: 5px;">Per | Alan Griffiths</p>
 </div>
 
-<div class="indent"><p>----------------------------------------------------------------------------------------------------------------------------------------------------------</p></div>
+<div class="indent" style="border: 2px dashed grey; margin: 50px 0px 10px 0px">
+
+</div>
 
 <div class="indent center">
 <b class="danger mt">REMITTANCE</b>  <br>
 <b class="danger">Please remit your payment advice to:- alan@aspectbtilaw.com.au</b>  
 </div>
 
-<p class="indent" style="text-decoration: underline; font-weight:700;margin-bottom: 1px;">Direct Deposit</p>
+<p class="indent" style="text-decoration: underline; font-weight:700; margin-bottom: 1px;">Direct Deposit</p>
 <!-- <table class="borderless" style="float:left; width:auto">
   <tbody>
     <tr><th class="indent un-bold" >Account Name: </th><td>Aspect Business Taxation & Insolvency Law</td></tr>
@@ -434,18 +433,35 @@
 
 
 <div class="new-page" style="display:block; clear:both; page-break-after:always;"></div>
-
-<div style="border-top: 1px solid lightgrey; margin-top: 30px;">
-  <h4>Payment Details</h4>
-  <div>
-    <p>Payment Methods: <b>{{paymentMethod}}</b></p>
-    <p>Bank Name: <b>{{bankName}}</b></p>
-    <p>Account Number: <b>{{accountNumber}}</b></p>
-    <p>BSB Number: <b>{{bsbNumber}}</b></p>
-    <p>Payment Terms: <b>{{paymentTerms}} Days</b></p>
+<div class="paymentItems" >
+  <div class="paymentHeader">
+    <img src="{{header}}" alt="Logo" height="100" style=""/>
+    <h2 class="danger">Payment Itemisation</h2>
   </div>
-  <br />
-</div>
+  <h4 class="danger">Payment Details</h4>
+  <div class="flexrow">       
+    <table class="borderless">
+      <thead class="danger">
+        <tr class="topline-large-bottom" data-label>
+          <th>Payment Methods </th>
+          <th>Bank Name </th>
+          <th>Account Number</th>
+          <th>BSB Number</th>
+          <th>Payment Terms</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-label>
+          <th>{{paymentMethod}}</th>
+          <th>{{bankName}}</th>
+          <th>{{accountNumber}}</th>
+          <th>{{bsbNumber}}</th>
+          <th>{{paymentTerms}}</th>
+        </tr>
+      <tbody>
+    </table>
+    </div>
+  </div>
 
 <div class="form-body">
   <div class="form-heading">
@@ -490,11 +506,26 @@
   <p>For more information about your rights, please read the fact sheet titled Your right to challenge legal costs. You can ask us for a copy, or obtain it from your local law society or law institute (or download it from their website).</p>
 </div>
 <style>
+  .paymentItems{
+    margin: 100px auto;
+  }
+  .paymentHeader{
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  }
+  .paymentHeader h2{
+    margin-top: 70px;
+  }
 .invoiceHeader-1{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.invoiceHeader-1 h2{
+  margin-top: 70px;
 }
 
 .invoiceHeader-2 {
@@ -502,6 +533,7 @@
   color: rgb(190, 6, 6);
   background-color: rgb(218, 218, 218);
   margin-bottom: 20px;
+  padding-left: 20px;
 }
 
 .flex-25 {
