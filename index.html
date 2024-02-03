@@ -91,20 +91,21 @@
   </style>
   <div id="report-id" class="report portrait">
     <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
-    <table class="borderless" style="float:right; width:300px">
+    <section>
+      <h2 class="title">{{organizationName}}</h2>
+      <!-- <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div> -->
+    </section>
+    <!-- <table class="borderless" style="float:right; width:300px">
       <tbody>
         <tr><th class="right">{{contactName}}</th></tr>
         <tr><th class="right">{{organizationEmail}}</th></tr>
         <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
         <tr><th class="right">{{organizationWebsite}}</th></td></tr>
       </tbody>
-    </table>
+    </table> -->
 
     <div style="clear: both;"></div>
-    <section>
-      <h2 class="title">{{organizationName}}</h2>
-      <!-- <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div> -->
-    </section>
+ 
   
     <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
@@ -144,13 +145,12 @@
     <tbody>
         <tr>
             <td style="font-weight: bold;">Invoce Total </td>
-            <td>{{totalAmount}}</td>
+            <td>{{totalNetAmount}}</td>
         </tr>         
 
         <tr>
           <td>Less amount to be transferred from Trust </td>
-          <td>{{totalOweAmount}}
-            Logo</td>
+          <td>{{TrustAmount}}</td>
         </tr>    
     </tbody>
 </table> 
@@ -165,11 +165,16 @@
     </thead>
     <tbody>
         <tr>
-            <td style="font-weight: bold;">Total Invoice </td>
+            <td style="font-weight: bold;">Total Due </td>
             <td>{{totalAmount}}</td>
         </tr>
     </tbody>
 </table> 
+ <hr />
+
+ <div>
+   <p class="center"><i>Invoices are payable within seven (7) days</i><br><i>All balances received after the due date will accrue interest in accordance with our Costs Agreement</i></p>
+ </div>
 
   <div style="clear: both"></div>
         <!-- <div style="float: left">
@@ -218,7 +223,7 @@
     </div>
     </div> -->
 
-    <div style="display: {{displayDis}}">
+    <!-- <div style="display: {{displayDis}}">
     <h5>Disbursements</h5>
     <div class="flexrow">        
       <table class="borderless">
@@ -338,7 +343,7 @@
     <section>
       <img src="{{signature}}" alt="Logo" class="left" />
       <p>{{contactName}}</p>
-    <section>
+    <section> -->
 
 <!-- page break -->
 <div class="new-page" style="display:block; clear:both; page-break-after:always;"></div>
