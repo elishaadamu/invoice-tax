@@ -142,22 +142,34 @@
    
     <table class="borderless" style="float:right; width:300px;margin-bottom:20px">
       <tbody>
-        <tr><th class="indent">File Ref:</th><td>55655</td></tr>
-        <tr><th class="indent">Invoice No:</th><td>55655</td></tr>
+        <tr><th class="right un-bold">{{organizationName}}</th></tr>
+        <tr><th class="right un-bold">{{businessAddress}}</th></tr>
+        <tr><th class="right un-bold">{{taxScheme}}</th></td></tr>
+        <tr><th class="right un-bold">ABN:{{ABN}}</th></td></tr>
       </tbody>
     </table>
-    <!-- <table class="borderless" style="float:right; width:300px">
-      <tbody>
-        <tr><th class="right">{{contactName}}</th></tr>
-        <tr><th class="right">{{organizationEmail}}</th></tr>
-        <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
-        <tr><th class="right">{{organizationWebsite}}</th></td></tr>
-      </tbody>
-    </table> -->
 
-    <div style="clear: both;"></div>
-    
+    <div style="clear: both"></div>
+    <p style="margin-bottom:20px"class="date">{{issueDate}}</p>
+
+    <div style="clear: both"></div>
+
+
+    <table class="borderless" style="float:left; width:200px;margin-bottom:20px">
+      <tbody>
+        <tr><th class="left un-bold">{{customerName}}</th></tr>
+        <tr><th class="left un-bold">{{customerAddressLabel}}</th></tr>
+      </tbody>
+    </table>
   
+    <table class="borderless" style="float:right; width:auto">
+      <tbody>
+        <tr><th class="indent">File Ref <span>     |    </span></th><td style="padding-left: 50px;">{{fileCode}}</td></tr>
+        <tr><th class="indent">Invoice No <span> |    </span></th><td style="padding-left: 50px;">{{invoiceNumber}}</td></tr>
+      </tbody>
+    </table>
+    <div style="clear: both;"></div>  
+
     <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
     <p style="padding-left: 16px;" class="danger"><strong>RE: </strong>{{fileMatter}}</p>
