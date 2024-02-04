@@ -249,19 +249,15 @@
 <b class="danger">Please remit your payment advice to:- {{organizationEmail}}</b>  
 </div>
 
-<tr><th class="right">{{contactName}}</th></tr>
-<tr><th class="right">{{organizationEmail}}</th></tr>
-<tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
-<tr><th class="right">{{organizationWebsite}}</th></td></tr>
 
 <p class="indent" style="text-decoration: underline; font-weight:700; margin-bottom: 1px;">Direct Deposit</p>
 <!-- First Group of Tables -->
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">Aspect Business Taxation & Insolvency Law</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">014 - 734</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">4646 - 10181</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">{{bankingAccountName}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">{{bsbNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">{{accountNumber}}</td></tr>
       <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">000737</td></tr>
     </tbody>
   </table>
@@ -279,7 +275,7 @@
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;"> ASPECT BTI Pty Ltd <br>PO Box <br> 51 EARLVILLE QLD 4870</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;">{{organizationAddressLabel}}</td></tr>
       <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;">000737</td></tr>
     </tbody>
   </table>
