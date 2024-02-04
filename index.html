@@ -139,36 +139,26 @@
   </style>
   <div id="report-id" class="report portrait">
     <img src="{{header}}" alt="Logo" height="100" style="float: Left;"/>
-    <section>
-      <h2 class="title">{{organizationName}}</h2>
-      <div class="title">{{businessAddress}} {{taxScheme}} ABN:{{ABN}}</div>
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <table class="borderless" style="float:right; width:300px">
+   
+    <table class="borderless" style="float:right; width:300px;margin-bottom:20px">
       <tbody>
-        <tr><th class="right">File Ref | </th><td>{{fileCode}}</td></tr>
-        <tr><th class="right">Invoice No | </th><td>{{invoiceNumber}}</td></tr>
+        <tr><th class="indent">File Ref:</th><td>55655</td></tr>
+        <tr><th class="indent">Invoice No:</th><td>55655</td></tr>
       </tbody>
     </table>
-    <table class="borderless" style="float:left; width:300px">
+    <!-- <table class="borderless" style="float:right; width:300px">
       <tbody>
-        <tr><th class="">{{contactName}}</th></tr>
-        <tr><th class="">{{organizationEmail}}</th></tr>
-        <tr><th class="">{{organizationAddressLabel}}</th></td></tr>
-        <tr><th class="">{{organizationWebsite}}</th></td></tr>
+        <tr><th class="right">{{contactName}}</th></tr>
+        <tr><th class="right">{{organizationEmail}}</th></tr>
+        <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
+        <tr><th class="right">{{organizationWebsite}}</th></td></tr>
       </tbody>
-    </table>
+    </table> -->
 
     <div style="clear: both;"></div>
     
   
-    <h2 class="center danger">TAX INVOICE</h2>
+    <h3 class="center danger">TAX INVOICE</h3>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
     <p style="padding-left: 16px;" class="danger"><strong>RE: </strong>{{fileMatter}}</p>
     <table class="grid-table borderless" style="width: 100%;">
@@ -262,10 +252,10 @@
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">{{bankName}}</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">{{bsbNumber}}</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">{{accountNumber}}</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">{{invoiceNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;padding-left:50px">{{bankName}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;padding-left:50px">{{bsbNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;padding-left:50px">{{accountNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;padding-left:50px">{{invoiceNumber}}</td></tr>
     </tbody>
   </table>
 
@@ -282,8 +272,8 @@
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;">{{organizationAddressLabel}}</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;">{{invoiceNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;padding-left:50px">{{organizationAddressLabel}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;padding-left:50px">{{invoiceNumber}}</td></tr>
     </tbody>
   </table>
 
