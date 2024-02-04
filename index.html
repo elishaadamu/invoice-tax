@@ -232,12 +232,12 @@
  
 <div class="indent" style="margin-bottom: 5px;">
   <p style="margin-bottom: 5px;">With compliments</p>
- 
+  <b class="danger mt" style="margin-bottom: 5px;">{{organizationName}}</b>
 </div>
 
  
 <div class="indent" style="margin-bottom: 5px;">
-  <p style="margin-bottom: 5px;">Per | Alan Griffiths</p>
+  <p style="margin-bottom: 5px;">Per | {{customerName}}</p>
 </div>
 
 <div class="indent" style="border: 2px dashed grey; margin: 50px 0px 10px 0px">
@@ -246,18 +246,15 @@
 
 <div class="indent center">
 <b class="danger mt">REMITTANCE</b>  <br>
-<b class="danger">Please remit your payment advice to:- alan@aspectbtilaw.com.au</b>  
+<b class="danger">Please remit your payment advice to:- {{organizationEmail}}</b>  
 </div>
 
-<p class="indent" style="text-decoration: underline; font-weight:700; margin-bottom: 1px;">Direct Deposit</p>
-<!-- <table class="borderless" style="float:left; width:auto">
-  <tbody>
-    <tr><th class="indent un-bold" >Account Name: </th><td>Aspect Business Taxation & Insolvency Law</td></tr>
-    <tr><th class="indent un-bold">BSB: </th><td>{{fileCode}}</td></tr>
-    <tr><th class="indent un-bold">Account Number: </th><td>{{invoiceNumber}}</td></tr>
-  </tbody>
-</table> -->
+<tr><th class="right">{{contactName}}</th></tr>
+<tr><th class="right">{{organizationEmail}}</th></tr>
+<tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
+<tr><th class="right">{{organizationWebsite}}</th></td></tr>
 
+<p class="indent" style="text-decoration: underline; font-weight:700; margin-bottom: 1px;">Direct Deposit</p>
 <!-- First Group of Tables -->
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
