@@ -145,23 +145,23 @@
     </section>
     <table class="borderless" style="float:right; width:300px">
       <tbody>
-        <tr><th class="indent">File Ref:</th><td>55655</td></tr>
-        <tr><th class="indent">Invoice No:</th><td>55655</td></tr>
+        <tr><th class="indent">File Ref | </th><td>{{fileCode}}</td></tr>
+        <tr><th class="indent">Invoice No | </th><td>{{invoiceNumber}}</td></tr>
       </tbody>
     </table>
-    <!-- <table class="borderless" style="float:right; width:300px">
+    <table class="borderless" style="float:right; width:300px">
       <tbody>
         <tr><th class="right">{{contactName}}</th></tr>
         <tr><th class="right">{{organizationEmail}}</th></tr>
         <tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
         <tr><th class="right">{{organizationWebsite}}</th></td></tr>
       </tbody>
-    </table> -->
+    </table>
 
     <div style="clear: both;"></div>
     
   
-    <h3 class="center danger">TAX INVOICE</h3>
+    <h2 class="center danger">TAX INVOICE</h2>
     <h5 class="text-center text-bold mt danger">ABN:{{ABN}}</h5>
     <p style="padding-left: 16px;" class="danger"><strong>RE: </strong>{{fileMatter}}</p>
     <table class="grid-table borderless" style="width: 100%;">
@@ -249,27 +249,23 @@
 <b class="danger">Please remit your payment advice to:- {{organizationEmail}}</b>  
 </div>
 
-<tr><th class="right">{{contactName}}</th></tr>
-<tr><th class="right">{{organizationEmail}}</th></tr>
-<tr><th class="right">{{organizationAddressLabel}}</th></td></tr>
-<tr><th class="right">{{organizationWebsite}}</th></td></tr>
 
 <p class="indent" style="text-decoration: underline; font-weight:700; margin-bottom: 1px;">Direct Deposit</p>
 <!-- First Group of Tables -->
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">Aspect Business Taxation & Insolvency Law</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">014 - 734</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">4646 - 10181</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">000737</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Name: </th><td style="font-size: 14px;">{{accountName}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">BSB: </th><td style="font-size: 14px;">{{bsbNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Account Number: </th><td style="font-size: 14px;">{{accountNumber}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref: </th><td style="font-size: 14px;">{{fileCode}}</td></tr>
     </tbody>
   </table>
 
   <table class="borderless" style="float:right; width:auto; margin-left: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>File Ref:</b><br>230083</th></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Invoice No:</b><br>000737</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>File Ref:</b><br>{{fileCode}}</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Invoice No:</b><br>{{invoiceNumber}}</th></tr>
     </tbody>
   </table>
 </div>
@@ -279,15 +275,15 @@
 <div style="overflow: auto;">
   <table class="borderless" style="float:left; width:auto; margin-right: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;"> ASPECT BTI Pty Ltd <br>PO Box <br> 51 EARLVILLE QLD 4870</td></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;">000737</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; word-wrap: break-word;">Please remit to:</th><td style="font-size: 14px;">{{organizationAddressLabel}}</td></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px;">Remittance Ref:</th><td style="font-size: 14px;">{{invoiceNumber}}</td></tr>
     </tbody>
   </table>
 
   <table class="borderless" style="float:right; width:auto; margin-left: 20px;">
     <tbody>
-      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>Invoice Date</b><br>09 November 2023</th></tr>
-      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Due Date:</b><br>09 November 2023</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right;"><b>Invoice Date</b><br>{{issueDate}}</th></tr>
+      <tr><th class="indent un-bold" style="font-size: 14px; text-align:right; padding-top:30px;"><b>Due Date:</b><br>{{dueDate}}</th></tr>
     </tbody>
   </table>
 </div>
